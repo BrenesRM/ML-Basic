@@ -82,6 +82,8 @@ plt.plot([1, 2, 3], [4, 5, 6])
 plt.title("Matplotlib Test")
 plt.savefig("test_plot.png")
 print("Matplotlib test plot saved as 'test_plot.png'")
+
+![test_plot](https://github.com/user-attachments/assets/47b8d0e5-daa1-4eb4-8491-9c61106ba233)
 ________________________________________
 Run the Script
 Run the container and execute the script inside it:
