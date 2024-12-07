@@ -1,13 +1,13 @@
 Iris Dataset Classification 
 
-To build the Python files and provide a step-by-step explanation for the Iris classification problem, we will:
+To build the Python files and provide a step-by-step explanation for the Iris classification problem, we will:  
 
-Import necessary libraries and load the Iris dataset.
-Split the data into training and test sets.
-Inspect the data (basic exploration).
-Train a machine learning model.
-Evaluate the model's performance.
-Save the Python script file.
+1. Import necessary libraries and load the Iris dataset.  
+2. Split the data into training and test sets.     
+3. Inspect the data (basic exploration).  
+4. Train a machine learning model.  
+5. Evaluate the model's performance.  
+6. Save the Python script file.  
 
 ![image](https://github.com/user-attachments/assets/066ab508-fd64-4c25-b6be-02915bdbe3e1)
 
