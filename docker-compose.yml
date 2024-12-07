@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ml-app:
+    build:
+      context: .
+    ports:
+      - "8888:8888"  # Expose Jupyter Notebook on port 8888
+    volumes:
+      - .:/app  # Mount the current directory to the /app folder in the container
+    environment:
+      - PYTHONUNBUFFERED=1
+    tty: true
