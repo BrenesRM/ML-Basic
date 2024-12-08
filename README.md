@@ -1,7 +1,7 @@
 # ML-Basic
 Implementing Neural Networks in TensorFlow
 
-To create a Docker setup to run machine learning applications with the technologies you mentioned (numpy, scipy, matplotlib, ipython, scikit-learn, pandas), here's an example of a Dockerfile and a docker-compose.yml file for running it locally:
+To create a Docker setup to run machine learning applications with the technologies mentioned (numpy, scipy, matplotlib, ipython, scikit-learn, pandas), here's an example of a Dockerfile and a docker-compose.yml file for running it locally:
 ________________________________________
 Steps to Use
 1.	Prepare the Files
