@@ -35,4 +35,3 @@ new_data = np.array([[5.1, 3.5, 1.4, 0.2]])
 prediction = knn.predict(new_data)
 predicted_species = iris_dataset['target_names'][prediction[0]]
 print(f"Prediction for new data point: {predicted_species}")
-s
