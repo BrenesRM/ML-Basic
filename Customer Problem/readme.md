@@ -1,4 +1,6 @@
-Understanding the Validation Curve
+Understanding the Validation Curve  
+
+![image](https://github.com/user-attachments/assets/6fd921b2-f325-4f4b-b14c-1daf7ea73765)  
 
 A validation curve is a plot that shows how a model's performance changes with different hyperparameter values. In this case, the hyperparameter being tuned is the maximum depth of a decision tree.
 
