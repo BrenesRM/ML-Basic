@@ -1,41 +1,77 @@
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+import matplotlib.pyplot as plt
+import pandas as pd
 
-# Step 1: Define the problem
+# Load MNIST data
 print("Loading MNIST dataset...")
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
-x_train, x_test = x_train / 255.0, x_test / 255.0  # Normalize data
 
-# Step 2: Build neural network architecture
+# Normalize the data
+x_train = x_train / 255.0
+x_test = x_test / 255.0
+
+# Flatten the data for the fully connected neural network
+x_train = x_train.reshape(-1, 28 * 28)
+x_test = x_test.reshape(-1, 28 * 28)
+
+# Convert labels to one-hot encoding
+y_train = tf.keras.utils.to_categorical(y_train, 10)
+y_test = tf.keras.utils.to_categorical(y_test, 10)
+
+# Build the model
 model = models.Sequential([
-    layers.Flatten(input_shape=(28, 28)),
+    layers.Input(shape=(28 * 28,)),
     layers.Dense(128, activation='relu'),
+    layers.Dropout(0.2),
+    layers.Dense(64, activation='relu'),
     layers.Dropout(0.2),
     layers.Dense(10, activation='softmax')
 ])
 
-model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
+model.compile(optimizer='adam', 
+              loss='categorical_crossentropy', 
               metrics=['accuracy'])
 
-# Step 3: Train for an epoch and evaluate
-epochs = 5
-for epoch in range(epochs):
-    print(f"\nEpoch {epoch + 1}/{epochs}")
-    history = model.fit(x_train, y_train, epochs=1, validation_split=0.2, verbose=1)
+# Train the model
+history = model.fit(x_train, y_train, 
+                    validation_split=0.2, 
+                    epochs=5, 
+                    batch_size=32, 
+                    verbose=1)
 
-    # Step 4: Check training and validation error
-    train_loss, train_acc = model.evaluate(x_train, y_train, verbose=0)
-    val_loss, val_acc = model.evaluate(x_test, y_test, verbose=0)
+# Evaluate the model
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=0)
+print(f"Final Test Accuracy: {test_acc:.2f}")
 
-    print(f"Training Accuracy: {train_acc:.2f}, Validation Accuracy: {val_acc:.2f}")
+# Create a Pandas DataFrame from training history
+history_df = pd.DataFrame(history.history)
 
-    if train_loss > val_loss:  # Check for overfitting
-        print("Validation loss is increasing. Consider regularization or stopping.")
-        break
+# Save DataFrame as CSV
+history_df.to_csv("training_history.csv", index=False)
 
-# Step 5: Final evaluation on test data
-test_loss, test_acc = model.evaluate(x_test, y_test, verbose=1)
-print(f"\nFinal Test Accuracy: {test_acc:.2f}")
+# Plot training and validation accuracy
+plt.figure(figsize=(12, 6))
+
+# Accuracy plot
+plt.subplot(1, 2, 1)
+plt.plot(history_df.index + 1, history_df['accuracy'], label='Training Accuracy', marker='o')
+plt.plot(history_df.index + 1, history_df['val_accuracy'], label='Validation Accuracy', marker='o')
+plt.title('Training and Validation Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+
+# Loss plot
+plt.subplot(1, 2, 2)
+plt.plot(history_df.index + 1, history_df['loss'], label='Training Loss', marker='o')
+plt.plot(history_df.index + 1, history_df['val_loss'], label='Validation Loss', marker='o')
+plt.title('Training and Validation Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+
+# Save plot as an image
+plt.savefig("training_results.png")
+plt.show()
