@@ -126,3 +126,5 @@ The printed output includes:
 Original values.  
 Encrypted values.  
 Decrypted result after computation.  
+
+![Homomorphic Criptography example](https://github.com/user-attachments/assets/42d7d664-ac35-4a1f-b465-2d1ed69ca9c2)
