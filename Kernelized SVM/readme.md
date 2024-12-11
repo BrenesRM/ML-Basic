@@ -44,13 +44,13 @@ pip install numpy scipy matplotlib pandas scikit-learn mglearn joblib jupyter te
 1. Clone this repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/BrenesRM/ML-Basic
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd <repository_directory>
+cd Kernelized SVM
 ```
 
 3. Run the script:
