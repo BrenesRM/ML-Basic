@@ -62,7 +62,10 @@ python kernelized_svm.py
 ### Outputs
 
 - `decision_boundary.png`: A plot showing the decision boundary of the trained SVM.
+  ![image](https://github.com/user-attachments/assets/f9406da9-c815-4884-b56c-0eda5c75d926)
+
 - `predictions_table.png`: An image of a DataFrame containing sample predictions and corresponding true labels.
+  ![image](https://github.com/user-attachments/assets/8d4aeb90-1b30-4033-b6c5-8b14aa8f6e1d)
 
 ---
 
