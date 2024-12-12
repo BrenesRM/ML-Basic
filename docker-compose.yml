@@ -11,5 +11,4 @@ services:
       - .:/app  # Mount the current directory to the /app folder in the container
     environment:
       - PYTHONUNBUFFERED=1
-      - JUPYTER_TOKEN=""  # Disable Jupyter token for ease of access
     tty: true
