@@ -12,23 +12,7 @@ The repository is organized as follows:
 - **`tensorflow_basics.py`**: Introduces TensorFlow for building a simple neural network, with training loss visualization and prediction results.
 
 ---
-
-## Prerequisites
-
-To run the scripts, ensure you have the following Python libraries installed:
-
-- `numpy`
-- `pandas`
-- `matplotlib`
-- `scikit-learn`
-- `tensorflow`
-
-You can install the required libraries using `pip`:
-
-```bash
-pip install numpy pandas matplotlib scikit-learn tensorflow
-
-File Descriptions
+## File Descriptions
 1. unsupervised_clustering.py
 Description: Explores clustering techniques on synthetic datasets.
 Clustering Algorithms:
@@ -89,3 +73,19 @@ These scripts are based on concepts from:
 "Fundamentals of Deep Learning" by Nikhil Buduma.
 License
 This repository is open-source and available under the MIT License.
+## Prerequisites
+
+To run the scripts, ensure you have the following Python libraries installed:
+
+- `numpy`
+- `pandas`
+- `matplotlib`
+- `scikit-learn`
+- `tensorflow`
+
+You can install the required libraries using `pip`:
+
+```bash
+pip install numpy pandas matplotlib scikit-learn tensorflow
+
+
